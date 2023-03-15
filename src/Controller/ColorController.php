@@ -8,25 +8,19 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ColorController extends AbstractController
 {
-    // protected $colors =[
-    //     ['name' => 'bleu', 'color' => 'blue'],
-    //     ['name' => 'Attention virus', 'color' => 'red']
-    // ];
-    // #[Route('/color/{color}', name: 'app_color')]
-    // public function index(): Response
-    // {
-
     
-    //     return $this->render('index.html.twig', [
-    //         'color' =>$this->colors,
-    //     ]);
-    //  }
-    #[Route('/color/{color}', name: 'appcolor{color}')]
+    #[Route('/color/{color}', name: 'app_color_{color}')]
+   
+
     public function dynamique($color): Response
     {
-
+        $message = null;
+        if ($color == 'red') {
+            $message = 'Attention risque de virus';
+        }
         return $this->render('color/index.html.twig', [
             'color' => $color,
+            'message' => $message
         ]);
     }
 }

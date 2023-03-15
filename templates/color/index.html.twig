@@ -4,6 +4,12 @@
 
 {% block body %}
     <div>
-            <h1  style="color:{{color}}">{{ color }}</h1>
+        <h1  class="mt-8 text-6xl font-bold text-center" style="color:{{color}}">{{ color }}</h1>
+        {% if message is defined %}
+            <h2 class="mt-8 text-6xl font-bold text-center" style="color:{{ color }}">{{ message }}</h2>
+            <img class="w-1/2 max-w-full h-auto mt-8 mx-auto" src="{{asset('assets/image/attention.gif')}}" alt="Attention gif">
+
+        {% endif %}
     </div>
+  
 {% endblock %}
