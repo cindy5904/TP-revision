@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ColorController extends AbstractController
 {
     
-    #[Route('/color/{color}', name: 'app_color_{color}')]
+    #[Route('/color/{color}', name: 'app_color')]
    
 
     public function dynamique($color): Response
