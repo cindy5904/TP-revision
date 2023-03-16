@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+    <div class="flex justify-center mt-8">
+    <form action="{{ path('app_search') }}" method="get" class="flex">
+      <input type="text" name="query" placeholder="Recherche..." class="px-4 py-2 rounded-l-lg border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white">
+      <button type="submit" class="px-4 py-2 bg-blue-700 text-white font-semibold rounded-r-lg border border-blue-900 border-r-0 uppercase tracking-wide hover:bg-blue-800">Rechercher</button>
+    </form>
+  </div>
+
+  <h1 class="text-black text-shadow text-center mt-8"> {{query}} </h1>
+  <img class=" mt-8 mx-auto" src="{{asset('assets/images/cc.gif')}}" alt="Attention gif">
+
+{% endblock %}
+
